@@ -1,4 +1,7 @@
-class Shoot extends GameObject{
+import GameObject from "./gameobject.js";
+
+export default class Shoot extends GameObject {
+	
 	constructor(x, y, w, h, angle) {
 		super(x, y, w, h);
 		this.speed = 5;
@@ -10,3 +13,4 @@ class Shoot extends GameObject{
 		this.y += Math.sin(this.angle - Math.PI/2) * this.speed;
 	}
 }
+

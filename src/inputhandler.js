@@ -1,4 +1,5 @@
-class InputHandler {
+export default class InputHandler {
+	
 	constructor() {
 		//Keyboard Events
 		this.keyPressed = {};

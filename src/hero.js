@@ -1,4 +1,8 @@
+import Shoot from "./shoot.js";
+import GameObject from "./gameobject.js";
+
 class Hero extends GameObject{
+	
 	constructor(x, y, w, h) {
 		super(x, y, w, h);
 		this.angle = 0;
@@ -60,3 +64,5 @@ class Hero extends GameObject{
 		this.move(inputHandler.getKeyPressed);
 	}
 }
+
+export default Hero;
