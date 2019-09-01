@@ -1,10 +1,18 @@
 import GameObject from "./gameobject.js";
 
 export default class Enemy extends GameObject {
-    constructor(x, y, w, h) {
-        super(x, y, w, h);
+
+    constructor() {
+        super(
+            Math.floor(Math.random() * window.innerWidth),  // x
+            Math.floor(Math.random() * window.innerHeight), // y
+            25,  // width 
+            25); // height
+            console.log(this)
         this.speed = 1;
-		this.angle = 0;
+        this.angle = 0;
+		this.prevX = this.x;
+		this.prevY = this.y;
     }
 
     updateAngle(heroX, heroY) {
@@ -16,6 +24,8 @@ export default class Enemy extends GameObject {
     }
 
     move(heroX, heroY) {
+        this.prevX = this.x;
+        this.prevY = this.y;
         // down
         if(heroY > this.y && (heroX <= this.x + 10 && heroX >= this.x - 10)) {
             console.log("down");
